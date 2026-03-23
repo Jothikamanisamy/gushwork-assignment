@@ -3,6 +3,10 @@
  * Features: Sticky Header, Carousel, Hover Zoom
  */
 
+window.onload = function () {
+    window.scrollTo(0, 0);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     initStickyHeader();
     initCarousel();

@@ -2550,4 +2550,7 @@ header.sticky {
     }
 }
 
+html {
+  scroll-behavior: auto;
+}
 
