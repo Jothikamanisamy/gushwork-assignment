@@ -15,27 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * 1. Sticky Header Functionality
- * Shows header when scrolling beyond the first fold (Hero)
+ * Shows header when scrolling beyond the first fold 
  */
 function initStickyHeader() {
     const header = document.querySelector('#main-header');
-    const hero = document.querySelector('.hero');
-    const body = document.body;
+    const firstSection = document.querySelector('.product-detail');
+
+    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
-        // Calculate the height of the first fold
-        const firstFoldHeight = hero.offsetHeight;
 
-        if (window.scrollY > firstFoldHeight) {
+        const firstFoldHeight = firstSection.offsetHeight;
+        const currentScroll = window.scrollY;
+
+        // show sticky after first fold
+        if (currentScroll > firstFoldHeight) {
+
             header.classList.add('sticky');
-            body.classList.add('is-sticky');
+
+            // hide when scrolling down, show when scrolling up
+            if (currentScroll > lastScroll) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+
         } else {
+
             header.classList.remove('sticky');
-            body.classList.remove('is-sticky');
+            header.classList.remove('hide');
+
         }
+
+        lastScroll = currentScroll;
     });
 }
-
 /**
  * 2. Image Carousel Functionality
  * Swaps main image based on thumbnail clicks

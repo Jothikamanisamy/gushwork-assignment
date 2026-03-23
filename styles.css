@@ -126,8 +126,13 @@ header.sticky {
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    padding: 16px var(--pad-x); /* Slightly slimmer when sticky */
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+header.hide {
+    transform: translateY(-100%);
+    transition: all 0.4s ease;
 }
 
 /* Breakpoints for Responsive Padding */
@@ -2550,7 +2555,4 @@ header.sticky {
     }
 }
 
-html {
-  scroll-behavior: auto;
-}
 
