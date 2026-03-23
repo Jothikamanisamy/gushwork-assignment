@@ -682,7 +682,7 @@ header.hide {
     font-size: 16px;
     color: #888;
     font-weight: 400;
-    margin: 0 0 0px 0; /* Adds 40px of space directly below the title */
+    margin: 0 0 30px 0; /* Adds 40px of space directly below the title */
     display: block; /* Guarantees it takes up the full width so nothing sits next to it */
 }
 
